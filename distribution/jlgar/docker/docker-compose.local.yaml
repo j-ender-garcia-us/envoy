@@ -1,0 +1,10 @@
+services:
+  envoy:
+    image: ghcr.io/j-ender-garcia-us/mtgapp-envoy:local
+    container_name: jlgar_mtgapp_envoy
+    restart: unless-stopped
+    ports:
+    - "80:80"
+    - "9901:9901"
+    extra_hosts:
+    - "host.docker.internal:host-gateway"
